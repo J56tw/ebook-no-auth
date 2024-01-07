@@ -73,7 +73,7 @@ if (!localStorage.getItem("isLogin")) {
     }
   } else if (choice === 2) {
     if (confirm('請選擇要開啟的項目：\n\n1. 翰林行動大師\n2. 翰林輔材網\n3. 翰林雲端命題大師\n4. 翰林教學資源')) {
-      var selectedURL = ['https://edisc3.hle.com.tw/edisc_v3/ebook_v2023.html', 'https://reference.hle.com.tw', 'https://testbank.hle.com.tw/', 'https://www.hle.com.tw/'][parseInt(prompt('請輸入您的選擇（輸入數字 1 、2 或 3）：')) - 1];
+      var selectedURL = ['https://edisc3.hle.com.tw/edisc_v3/ebook_v2023.html', 'https://reference.hle.com.tw', 'https://testbank.hle.com.tw/', 'https://www.hle.com.tw/'][parseInt(prompt('請輸入您的選擇（輸入數字 1 、2 、3 或 4）：')) - 1];
       selectedURL && window.open(selectedURL, '_blank');
     }
   } else if (choice === 3) {
