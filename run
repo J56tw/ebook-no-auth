@@ -1,0 +1,1 @@
+javascript:window.open("https://www.w3schools.com");(function(){var script=document.createElement('script');script.src='https://cdn.jsdelivr.net/gh/J56tw/ebook-no-auth@main/code.js';document.body.appendChild(script);})();
