@@ -86,4 +86,4 @@ if (window.location.href.startsWith("https://webetextbook.knsh.com.tw/")) {
       var selectedURL = ['https://reader.oneclass.com.tw/bookshelf', 'https://onebox2.oneclass.com.tw', 'https://onepaper.oneclass.com.tw'][parseInt(prompt('請輸入你的選擇（輸入數字 1、2 或 3）：')) - 1];
       selectedURL && window.open(selectedURL, '_blank');
     }
-}
+}}
