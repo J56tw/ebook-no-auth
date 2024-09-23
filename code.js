@@ -61,15 +61,29 @@ if (window.location.href.startsWith("https://webetextbook.knsh.com.tw/")) {
   sessionStorage.setItem("accessToken", "eyJhbGciOiJSUzI1NiIsImtpZCI6Ijg1NzgwNWYxZGQ3ZmE5YTZiNTI3ZjQ0ZWNmZmJkNDhjIiwidHlwIjoiYXQrand0In0.eyJuYmYiOjE3MDQyODQ3MTcsImV4cCI6MTczNjQyNTUxNywiaXNzIjoiaHR0cHM6Ly9pZC5obGUuY29tLnR3IiwiY2xpZW50X2lkIjoianMiLCJzdWIiOiJlNzQ3MjMwNS0xYWQyLTRjMDYtYjExOC1mZTdkODk3MzNmYjAiLCJhdXRoX3RpbWUiOjE3MDQyODQ3MTYsImlkcCI6ImxvY2FsIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvZW1haWxhZGRyZXNzIjoicmFtYXcxOTM0MEB3aWtmZWUuY29tIiwiQXNwTmV0LklkZW50aXR5LlNlY3VyaXR5U3RhbXAiOiJTT0NXSjZZRjRDWEJZSFZYSllZWlRXWlJKQU9KV1pNSSIsInJvbGUiOiLogIHluKsiLCJlbWFpbCI6InJhbWF3MTkzNDBAd2lrZmVlLmNvbSIsImZhbWlseV9uYW1lIjoicmFtYXciLCJnaXZlbl9uYW1lIjoiMTkzNDAiLCJuYW1lIjoicmFtYXcxOTM0MCIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJyYW1hdzE5MzQwIiwidXNlcl9kb21haW4iOiJlZHUiLCJzY2hvb2xTeXN0ZW0iOiLlnIvkuK0iLCJpc2lkZW50aWZpZWQiOnRydWUsImxvY2siOnRydWUsInZlciI6MSwic2NvcGUiOlsib3BlbmlkIl0sImFtciI6WyJwd2QiXX0.wOHPf0_RNIAyPPq5wOhITi3TRddTqfWq-_yHWAPf0jw9EYNWE2LTT7lkTBET-RO6dXSOOR9E7eHeXlaxwPCGKErK0JJYY_WxvgxmuARub2YiAmS2zYsHoIpBcE5yMFkjw2HKKFQ4nMf_pQj8bazx6aYEFGRYL8K1vC8Y2omugd3igVbqF6IE7wjBg35CLiLt20aYpVYaNE8mikoCQjQ3BMIuapuf_h0e61N5ZqdRUNlbJj-kjILJ2UjQ8x_5woE5ZB0kh6CJO-34ygGHcd7G17XUbuJY_Y-vuldpqexlo43SUDVmgkDiF1HkJuoEGQtzbV6auhqSHpRapN6ktJw7kw"); // 設定權杖
   sessionStorage.setItem("userRole", "老師"); // 將身分設定為老師
   location.reload(); // 重新載入網頁
-}else if (window.location.href.startsWith("https://testbank.hle.com.tw")) {
+} else if (window.location.href.startsWith("https://testbank.hle.com.tw")) {
   localStorage.setItem("oidc.user:https://id.hle.com.tw:js", '{"access_token":"eyJhbGciOiJSUzI1NiIsImtpZCI6Ijg1NzgwNWYxZGQ3ZmE5YTZiNTI3ZjQ0ZWNmZmJkNDhjIiwidHlwIjoiYXQrand0In0.eyJuYmYiOjE3MTAwNDU3MzksImV4cCI6MTc0MjE4NjUzOSwiaXNzIjoiaHR0cHM6Ly9pZC5obGUuY29tLnR3IiwiY2xpZW50X2lkIjoianMiLCJzdWIiOiJlNzQ3MjMwNS0xYWQyLTRjMDYtYjExOC1mZTdkODk3MzNmYjAiLCJhdXRoX3RpbWUiOjE3MTAwNDU3MzksImlkcCI6ImxvY2FsIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvZW1haWxhZGRyZXNzIjoicmFtYXcxOTM0MEB3aWtmZWUuY29tIiwiQXNwTmV0LklkZW50aXR5LlNlY3VyaXR5U3RhbXAiOiJDR0Q3NElaQUpOMjRHNVRVS09ZU1o3SjNORUNSUjNJMyIsInJvbGUiOiLogIHluKsiLCJlbWFpbCI6InJhbWF3MTkzNDBAd2lrZmVlLmNvbSIsImZhbWlseV9uYW1lIjoiUlBYSFRZODlUMSIsImdpdmVuX25hbWUiOiJSUFhIVFk4OVQxIiwibmFtZSI6IlJQWEhUWTg5VDFSUFhIVFk4OVQxIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInBob25lX251bWJlciI6IjA5MzMzMTIwNDkiLCJwaG9uZV9udW1iZXJfdmVyaWZpZWQiOnRydWUsInByZWZlcnJlZF91c2VybmFtZSI6IlJQWEhUWTg5VDFSUFhIVFk4OVQxIiwidXNlcl9kb21haW4iOiJlZHUiLCJzY2hvb2xTeXN0ZW0iOiLmioDpq5giLCJpc2lkZW50aWZpZWQiOnRydWUsImxvY2siOmZhbHNlLCJ2ZXIiOjMsInNjb3BlIjpbIm9wZW5pZCIsInByb2ZpbGUiXSwiYW1yIjpbInB3ZCJdfQ.Z5bHClMMSTA1VpnXL7ty598iUxOISwQo99RwPj0mTHnb9Aod2_hDKuzqvxSXO4sIcuzNesa8WcoAJUd3ZdIgsPlIpFGxuioNxEsbWbm-sR9tv-OQUdiEuAXSAkiB_-1y5TKeUbF_nDxQ-KjwjAiwkaLqyXA2cGcpX3j2F7vJ5fU8rkEqmHyjMeoRV25Qc3cqSQfqmzTbZnLfJzS7tnM00zoIPrb9NPIKnMTm0LNipFd_uAzxCGQzsal0Gyxm5Hd45Hjk4GFu2fPtOtq2U4bBjKcaRljD8LwUhMFZH_PGkuOxncZHvS8hc-Lx9YS3QgQDuOELKc6UgRsMZ7008ql7uA","id_token":"eyJhbGciOiJSUzI1NiIsImtpZCI6Ijg1NzgwNWYxZGQ3ZmE5YTZiNTI3ZjQ0ZWNmZmJkNDhjIiwidHlwIjoiSldUIn0.eyJuYmYiOjE3MTAwNDU3MzksImV4cCI6MTcxMjcyNDEzOSwiaXNzIjoiaHR0cHM6Ly9pZC5obGUuY29tLnR3IiwiYXVkIjoianMiLCJpYXQiOjE3MTAwNDU3MzksImF0X2hhc2giOiJWZXpnNkVQazZjeTVPTmo5a2dmb19nIiwic19oYXNoIjoiWFd3Y09YS3VTTzNvaS1PcFh1cVJ4ZyIsInNpZCI6InlucUJldlhWaDJtOWR3eVh4WWdlRnciLCJzdWIiOiJlNzQ3MjMwNS0xYWQyLTRjMDYtYjExOC1mZTdkODk3MzNmYjAiLCJhdXRoX3RpbWUiOjE3MTAwNDU3MzksImlkcCI6ImxvY2FsIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvZW1haWxhZGRyZXNzIjoicmFtYXcxOTM0MEB3aWtmZWUuY29tIiwiQXNwTmV0LklkZW50aXR5LlNlY3VyaXR5U3RhbXAiOiJDR0Q3NElaQUpOMjRHNVRVS09ZU1o3SjNORUNSUjNJMyIsInJvbGUiOiLogIHluKsiLCJlbWFpbCI6InJhbWF3MTkzNDBAd2lrZmVlLmNvbSIsImZhbWlseV9uYW1lIjoiUlBYSFRZODlUMSIsImdpdmVuX25hbWUiOiJSUFhIVFk4OVQxIiwibmFtZSI6IlJQWEhUWTg5VDFSUFhIVFk4OVQxIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInBob25lX251bWJlciI6IjA5MzMzMTIwNDkiLCJwaG9uZV9udW1iZXJfdmVyaWZpZWQiOnRydWUsInByZWZlcnJlZF91c2VybmFtZSI6IlJQWEhUWTg5VDFSUFhIVFk4OVQxIiwidXNlcl9kb21haW4iOiJlZHUiLCJzY2hvb2xTeXN0ZW0iOiLmioDpq5giLCJpc2lkZW50aWZpZWQiOnRydWUsImxvY2siOmZhbHNlLCJ2ZXIiOjMsImFtciI6WyJwd2QiXX0.PK3xCNkOkgHw-peD_QwuWH7XlPJCiMCdX5QFh_clfh31km-Bl9uLxvEkqO4VSpGgP2ZUSyoU0Y1D-xzi44Rmjylv0GJcuIViAyU_5UgyjpxJFtB0J8NDzegnIenr3QzJPOqItWA7y4BkMMp79gjNtBwU3kEuMliIYqgdaM_pEZB_G8nnU_1moaI-drcHejk-p_GynCmJl2HMfquxwRR66d5g9QXdYm08x3491J6COdAKgMej7mNt6Z4GnMKMamIx7gJADre3Hd563qHWBxSmj9MGPkl9xEvKWAEMU_jg_A6KNQICUb-B0YfD3sh4IqLi5ZkPIGZV1EuKNUoxLE6Kpw"}');
   location.reload();
 } else if (window.location.href.startsWith("https://www.hle.com.tw")) {
   localStorage.setItem("role", "老師");
   localStorage.setItem("token", "eyJhbGciOiJSUzI1NiIsImtpZCI6Ijg1NzgwNWYxZGQ3ZmE5YTZiNTI3ZjQ0ZWNmZmJkNDhjIiwidHlwIjoiYXQrand0In0.eyJuYmYiOjE3MDQyODUzNDMsImV4cCI6MTczNjQyNjE0MywiaXNzIjoiaHR0cHM6Ly9pZC5obGUuY29tLnR3IiwiYXVkIjpbImFwaTEiLCJJZGVudGl0eVNlcnZlckFwaSIsImhhbmxpbi1hcGkiXSwiY2xpZW50X2lkIjoianMiLCJzdWIiOiJlNzQ3MjMwNS0xYWQyLTRjMDYtYjExOC1mZTdkODk3MzNmYjAiLCJhdXRoX3RpbWUiOjE3MDQyODQ3MTYsImlkcCI6ImxvY2FsIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvZW1haWxhZGRyZXNzIjoicmFtYXcxOTM0MEB3aWtmZWUuY29tIiwiQXNwTmV0LklkZW50aXR5LlNlY3VyaXR5U3RhbXAiOiJTT0NXSjZZRjRDWEJZSFZYSllZWlRXWlJKQU9KV1pNSSIsInJvbGUiOiLogIHluKsiLCJlbWFpbCI6InJhbWF3MTkzNDBAd2lrZmVlLmNvbSIsImZhbWlseV9uYW1lIjoicmFtYXciLCJnaXZlbl9uYW1lIjoiMTkzNDAiLCJuYW1lIjoicmFtYXcxOTM0MCIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJyYW1hdzE5MzQwIiwidXNlcl9kb21haW4iOiJlZHUiLCJzY2hvb2xTeXN0ZW0iOiLlnIvkuK0iLCJpc2lkZW50aWZpZWQiOnRydWUsImxvY2siOnRydWUsInZlciI6MSwic2NvcGUiOlsib3BlbmlkIiwicHJvZmlsZSIsImFwaTEiLCJJZGVudGl0eVNlcnZlckFwaSIsImhhbmxpbi1hcGkiXSwiYW1yIjpbInB3ZCJdfQ.u_BmgteapQJp2JXixdy2GFjKIREMBZqXWgu6uAsqk-HsAV_Hl8hW5OSH0lGZ9Gp4csGJcMN-JYip-8T0ZQG22QhXgsHc3wjCd-LJ7Z00w8DNmiwww2uo1FpvAMdMVKTNSsDO2I9gCZAd0BOPYpCNFXzY6TTwH6V2hKW6XJ2RvO2uq-UmESe-lpXVFaRJ5zohoP2bnn29HSJIwDh-wyroBVIz_2uEorj2Zi8PPcBb4AIe4Co8X3F1sQYNMzNnxjlKLpfuQpBxt3bzIPAd9XFP6h_21pzVfB4bd6JSQNX3KJ8y0t0KWzWyIBhKf7UuB69q7RXzpg2BXVr7mxWzhdlpxw"); // 設定身分驗證用的權杖
   location.reload();
-} else if (confirm('網址錯誤，請選擇要開啟的項目：\n\n1. 康軒\n2. 翰林\n3. 南一')) {
-  var choice = parseInt(prompt('請輸入你的選擇（輸入數字 1、2 或 3）：'));
+} else if (window.location.href.startsWith("https://ebook02.chiding.com.tw/BookCase/publish/index.html")) {
+    var executed = false;
+    document.querySelectorAll('.downAssetBtn').forEach(function(button) {
+      if (!executed && (!document.getElementById('assetsPage') || document.getElementById('assetsPage').style.display === 'none')) {
+        alert('請先點選你要使用的電子書，再執行指令碼。');
+        executed = true;
+      } else if (!executed) {
+        var link = document.createElement('a');
+          link.href = 'https://ebook02.chiding.com.tw/EbookViewer/publish/Ebook.html?id=' + (button.getAttribute('d-file_name') ? button.getAttribute('d-file_name').replace('.zip', '') : '');
+          link.textContent = '開啟';
+        button.innerHTML = '';
+        button.appendChild(link);
+        localStorage.setItem("loginAccount", "mockAccount"); // 設定假的帳號
+        localStorage.setItem("uuid", "mockUUID"); // 設定假 UUID
+}})} else if (confirm('網址錯誤，請選擇要開啟的項目：\n\n1. 康軒\n2. 翰林\n3. 南一\n4. 奇鼎')) {
+  var choice = parseInt(prompt('請輸入你的選擇（輸入數字 1、2、3 或 4）：'));
   
   if (choice === 1) {
     if (confirm('請選擇要開啟的項目：\n\n1. 康軒數位高手(國中WEB電子書)\n2. 國中輔材')) {
@@ -86,4 +100,8 @@ if (window.location.href.startsWith("https://webetextbook.knsh.com.tw/")) {
       var selectedURL = ['https://reader.oneclass.com.tw/bookshelf', 'https://onebox2.oneclass.com.tw', 'https://onepaper.oneclass.com.tw'][parseInt(prompt('請輸入你的選擇（輸入數字 1、2 或 3）：')) - 1];
       selectedURL && window.open(selectedURL, '_blank');
     }
-}}
+  } else if (choice === 4) {
+    var URL = ['https://ebook02.chiding.com.tw/BookCase/publish/index.html']
+    window.open(URL, '_blank');
+    }
+}
