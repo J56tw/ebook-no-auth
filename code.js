@@ -21,19 +21,13 @@ if (window.location.href.startsWith("https://webetextbook.knsh.com.tw/")) {
   alert('請先選擇要使用的年級再執行指令碼。');
 } else if (window.location.href.startsWith('https://digitalmaster.knsh.com.tw/ebook/review/')) {
   alert('請先選擇要使用的電子書再執行指令碼。');
-} else if (window.location.href.startsWith('https://digitalmaster.knsh.com.tw/v3/pages/j/index.html')) {
-  if (window.openebook) {
-        console.log("运行模式: 导览页 (理由: 发现 window.openebook)");
-        // 导览页面 - 绕过登录验证
-        let src = window.openebook.toString(); // 修改前的代码
-        let src_arg0 = src.split('(')[1].split(')')[0]; // 唯一的参数
-        let src_main = src.split('{').slice(1).join('{').split('}').slice(0, -1).join('}').replace('readKeygrip', '_alwaysTrue'); // 主要片段，已打补丁
-        let c = (async function() {}).constructor; // 获取 AsyncFunction 的构造函数
-        window._alwaysTrue = function() {true}; // 一个用于绕过验证的替代函数
-        window.openebook = c(src_arg0, src_main); // 替换原函数
-  }
-} else if (window.location.href.startsWith('https://digitalmaster.knsh.com.tw/v3/pages/e/index.html')) {
-    alert('很抱歉，目前僅支援國中WEB電子書')
+} else if (location.href.match(/https:\/\/digitalmaster\.knsh\.com\.tw\/v3\/pages\/[^/]+\/index\.html/)) {
+    window.__fetch = window.fetch;
+    window.fetch = async function(url, opts) {
+        if (/verifykeygrip/i.test(url)) return { json: () => ({ isValid: true }) };
+        const data = await (await window.__fetch(url, opts)).json();
+        return { json: () => (data.errorType ? { isValid: true } : data) };
+    }
 } else if (window.location.href.startsWith("https://edisc3.hle.com.tw/edisc_v3")) {
   let time = new Date().getTime().toString();
   localStorage.setItem("last_signinX_v2023", time);
@@ -86,8 +80,8 @@ if (window.location.href.startsWith("https://webetextbook.knsh.com.tw/")) {
   var choice = parseInt(prompt('請輸入你的選擇（輸入數字 1、2、3 或 4）：'));
   
   if (choice === 1) {
-    if (confirm('請選擇要開啟的項目：\n\n1. 康軒數位高手(國中WEB電子書)\n2. 國中領域\n3. 國中輔材')) {
-      var selectedURL = ['https://digitalmaster.knsh.com.tw/v3/pages/j/index.html', 'https://webetextbook.knsh.com.tw/2/index.html?code_degree=2','https://digitalmaster.knsh.com.tw/ebook/review/'][parseInt(prompt('請輸入你的選擇（輸入數字 1、2 或 3）：')) - 1];
+    if (confirm('請選擇要開啟的項目：\n\n1. 康軒數位高手(國中)\n2. 康軒數位高手(國小)\n3. 國中領域\n3. 國中輔材')) {
+      var selectedURL = ['https://digitalmaster.knsh.com.tw/v3/pages/j/index.html', 'https://digitalmaster.knsh.com.tw/v3/pages/e/index.html','https://webetextbook.knsh.com.tw/2/index.html?code_degree=2','https://digitalmaster.knsh.com.tw/ebook/review/'][parseInt(prompt('請輸入你的選擇（輸入數字 1、2 或 3）：')) - 1];
       selectedURL && window.open(selectedURL, '_blank');
     }
   } else if (choice === 2) {
