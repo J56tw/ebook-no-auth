@@ -21,13 +21,37 @@ if (window.location.href.startsWith("https://webetextbook.knsh.com.tw/")) {
   alert('請先選擇要使用的年級再執行指令碼。');
 } else if (window.location.href.startsWith('https://digitalmaster.knsh.com.tw/ebook/review/')) {
   alert('請先選擇要使用的電子書再執行指令碼。');
-} else if (location.href.match(/https:\/\/digitalmaster\.knsh\.com\.tw\/v3\/pages\/[^/]+\/index\.html/)) {
-    window.__fetch = window.fetch;
-    window.fetch = async function(url, opts) {
-        if (/verifykeygrip/i.test(url)) return { json: () => ({ isValid: true }) };
-        const data = await (await window.__fetch(url, opts)).json();
+} if (window.location.href.startsWith("https://webetextbook.knsh.com.tw/")) {
+  var executed = false;
+  document.querySelectorAll('.downAssetBtn').forEach(function(button) {
+    if (!executed && (!document.getElementById('assetsPage') || document.getElementById('assetsPage').style.display === 'none')) {
+      alert('請先點選你要使用的電子書，再執行指令碼。');
+      executed = true;
+    } else if (!executed) {
+      var link = document.createElement('a');
+      if (window.location.href.startsWith("https://webetextbook.knsh.com.tw/webcase/index.html")) {
+        link.href = 'https://storage1.knsh.com.tw/material/' + button.getAttribute('d-file_name');
+        link.textContent = '下載';
+      } else if (window.location.href.startsWith("https://webetextbook.knsh.com.tw/2/index.html")) {
+        link.href = 'https://webetextbook.knsh.com.tw/Ebookviewer4Teacher/Ebook.html?id=' + (button.getAttribute('d-file_name') ? button.getAttribute('d-file_name').replace('.zip', '') : '');
+        link.textContent = '開啟';
+      }
+      button.innerHTML = '';
+      button.appendChild(link);
+      localStorage.setItem("loginAccount", "mockAccount"); // 設定假的帳號
+      localStorage.setItem("uuid", "mockUUID"); // 設定假 UUID
+}})} else if (window.location.href.startsWith('https://digitalmaster.knsh.com.tw/downloader/box-web/index.html')) {
+  alert('請先選擇要使用的年級再執行指令碼。');
+} else if (window.location.href.startsWith('https://digitalmaster.knsh.com.tw/ebook/review/')) {
+  alert('請先選擇要使用的電子書再執行指令碼。');
+} else if (location.href.match(/\/v3\/pages\/[^/]+\/index\.html/)) {
+    const originalFetch = window.fetch;
+    window.fetch = async (url, opts) => {
+        const response = () => ({ json: () => ({ isValid: true, expiry: atob("MTcyODM1OTY2NzIzNg=="), role: ["\u8001", "\u5E2B"].join(''), signature: atob("dGZFQmRsV05ZWE0tVUQwLUJRVGlMNzZVaV8w"), uuid: String.fromCharCode(55, 49, 53, 54, 51, 49) }) });
+        if (/verifykeygrip/i.test(url)) return response();
+        const data = await (await originalFetch(url, opts)).json();
         return { json: () => (data.errorType ? { isValid: true } : data) };
-    }
+    };
 } else if (window.location.href.startsWith("https://edisc3.hle.com.tw/edisc_v3")) {
   let time = new Date().getTime().toString();
   localStorage.setItem("last_signinX_v2023", time);
@@ -80,8 +104,8 @@ if (window.location.href.startsWith("https://webetextbook.knsh.com.tw/")) {
   var choice = parseInt(prompt('請輸入你的選擇（輸入數字 1、2、3 或 4）：'));
   
   if (choice === 1) {
-    if (confirm('請選擇要開啟的項目：\n\n1. 康軒數位高手(國中)\n2. 康軒數位高手(國小)\n3. 國中領域\n3. 國中輔材')) {
-      var selectedURL = ['https://digitalmaster.knsh.com.tw/v3/pages/j/index.html', 'https://digitalmaster.knsh.com.tw/v3/pages/e/index.html','https://webetextbook.knsh.com.tw/2/index.html?code_degree=2','https://digitalmaster.knsh.com.tw/ebook/review/'][parseInt(prompt('請輸入你的選擇（輸入數字 1、2 或 3）：')) - 1];
+    if (confirm('請選擇要開啟的項目：\n\n1. 康軒數位高手(國中)\n2. 康軒數位高手(國小)\n3. 國中領域\n4. 國中輔材')) {
+      var selectedURL = ['https://digitalmaster.knsh.com.tw/v3/pages/j/index.html', 'https://digitalmaster.knsh.com.tw/v3/pages/e/index.html','https://webetextbook.knsh.com.tw/2/index.html?code_degree=2','https://digitalmaster.knsh.com.tw/ebook/review/'][parseInt(prompt('請輸入你的選擇（輸入數字 1、2、3 或 4）：')) - 1];
       selectedURL && window.open(selectedURL, '_blank');
     }
   } else if (choice === 2) {
